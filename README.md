@@ -31,6 +31,10 @@ The `app.module.js` and nearly all other module files in this boilerplates store
 The `index.html` references all files which are needed for this project.
 
 Inside the `core` folder are the kind of modules which are useful everywhere in the application like services.
-The `core.module`
+The `core.module.js` implements all util modules inside the core folders.
+In the `core` folder is an subfolder `service` this represents a typical service. How this is implemented will be described in an own section. Inside the `service` folder are two files. The `service.module.js` file is the standard `module` file which already explained.
+The `service.service.js`file implements the logic of the service.
+
+The `hello-world` contains the first component of this boilerplate. It consists of three files, the obligatory `module` file which is already explained. Additional there are two further files `hello-world.component.js` which implements the logic of the module and the controller for this component and additional javascript stuff. The `hello-world.template.html` is the template of the injected component and contains the html code which will be displayed.
 
 ## service
