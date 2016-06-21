@@ -6,7 +6,7 @@ I used the phone application example directly from angular as an example to buil
 
 ## file structure
 
-´´´
+```
 |-app
 |--app.config.js
 |--app.module.js
@@ -23,18 +23,14 @@ I used the phone application example directly from angular as an example to buil
 |-.bowerrc
 |-bower.json
 |-package.json
-´´´
+```
 
-Inside the ´app´ folder all files which are directly related to the application itself will be stored.
-Within this folder there are different files and subfolders. The ´app.config.js´ stores the relevant configuration informations like routing informations.
-The ´app.module.js´ and nearly all other module files in this boilerplates store the dependency informations of the modules. The ´app.config.js´ especially stores the dependency informations of the whole application.
-The ´index.html´ references all files which are needed for this project.
+Inside the `app` folder all files which are directly related to the application itself will be stored.
+Within this folder there are different files and subfolders. The `app.config.js` stores the relevant configuration informations like routing informations.
+The `app.module.js` and nearly all other module files in this boilerplates store the dependency informations of the modules. The `app.config.js` especially stores the dependency informations of the whole application.
+The `index.html` references all files which are needed for this project.
 
-Inside the ´core´ folder are the kind of modules which are useful everywhere in the application like services.
-The ´core.module´
+Inside the `core` folder are the kind of modules which are useful everywhere in the application like services.
+The `core.module`
 
 ## service
-
-
-
-```
