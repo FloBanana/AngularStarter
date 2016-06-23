@@ -37,4 +37,17 @@ The `service.service.js`file implements the logic of the service.
 
 The `hello-world` contains the first component of this boilerplate. It consists of three files, the obligatory `module` file which is already explained. Additional there are two further files `hello-world.component.js` which implements the logic of the module and the controller for this component and additional javascript stuff. The `hello-world.template.html` is the template of the injected component and contains the html code which will be displayed.
 
+## new component creation
+
+To create a new component the following steps are necessary:
+1. Create a folder within the app folder with the name of the component written in `kebab-case`
+2. Inside this folder create three files and replace the `<name>` with the name of the component written in `kebab-case`: `<name>.module.js`, `<name>.component.js` and `<name>.template.html`
+3. Add the following into the `<name>.module.js`:
+```
+'use strict';
+
+angular.module('<name in camel-case>', ['<dependency>']);
+```
+4. 
+
 ## service
