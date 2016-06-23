@@ -40,17 +40,14 @@ The `hello-world` contains the first component of this boilerplate. It consists 
 ## new component creation
 
 To create a new component the following steps are necessary:
-1. Create a folder within the app folder with the name of the component written in `kebab-case`
-
+1. Create a folder within the app folder with the name of the component written in `kebab-case` 
 2. Inside this folder create three files and replace the `<name>` with the name of the component written in `kebab-case`: `<name>.module.js`, `<name>.component.js` and `<name>.template.html`
-
 3. Add the following into the `<name>.module.js`:
 ```
 'use strict';
 
 angular.module('<name in camel-case>', ['<dependency>']);
 ```
-
 4. Add the following into the `<name>.component.js`:
 ```
 'use strict';
@@ -82,7 +79,10 @@ angular.
 
 8. Now you have to add the injection of the new created files into the index.html so that the modules can be known from the application.
 ```
-
+...
+<script src="<name in kebab-case>/<name in kebab-case>.module.js"></script>
+<script src="<name in kebab-case>/<name in kebab-case>.component.js"></script>
+...
 ```
 
 ## service
