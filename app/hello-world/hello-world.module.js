@@ -1,3 +1,3 @@
 'use strict';
 
-angular.module('helloWorld', []);
+angular.module('helloWorld', ['core.service']);
