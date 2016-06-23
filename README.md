@@ -41,13 +41,48 @@ The `hello-world` contains the first component of this boilerplate. It consists 
 
 To create a new component the following steps are necessary:
 1. Create a folder within the app folder with the name of the component written in `kebab-case`
+
 2. Inside this folder create three files and replace the `<name>` with the name of the component written in `kebab-case`: `<name>.module.js`, `<name>.component.js` and `<name>.template.html`
+
 3. Add the following into the `<name>.module.js`:
 ```
 'use strict';
 
 angular.module('<name in camel-case>', ['<dependency>']);
 ```
-4. 
+
+4. Add the following into the `<name>.component.js`:
+```
+'use strict';
+
+angular.
+  module('<name in camel-case>').
+  component('<name in camel-case>', {
+    templateUrl: '<name in kebab-case>/<name in kebab-case>.template.html',
+    controller: ['<dependency>',
+        function(<dependency>){
+            <logic>
+        }
+    ]
+  });
+```
+
+5. Inside the `<name>.template.html` file is just the html code for the visualization stored
+
+6. Add the new module into the dependencies of the main application module inside `app.module.js`
+
+7. Add a route to new component into the `routeProvider` inside the `app.config.js` file like the following:
+```
+  ...
+  .when('/<url>', {
+    template: '<<name in kebab-case>></<name in kebab-case>>'
+  })
+  ...
+```
+
+8. Now you have to add the injection of the new created files into the index.html so that the modules can be known from the application.
+```
+
+```
 
 ## service
