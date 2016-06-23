@@ -40,15 +40,18 @@ The `hello-world` contains the first component of this boilerplate. It consists 
 ## new component creation
 
 To create a new component the following steps are necessary:
-1. Create a folder within the app folder with the name of the component written in `kebab-case` 
-2. Inside this folder create three files and replace the `<name>` with the name of the component written in `kebab-case`: `<name>.module.js`, `<name>.component.js` and `<name>.template.html`
-3. Add the following into the `<name>.module.js`:
+1) Create a folder within the app folder with the name of the component written in `kebab-case`
+
+2) Inside this folder create three files and replace the `<name>` with the name of the component written in `kebab-case`: `<name>.module.js`, `<name>.component.js` and `<name>.template.html`
+
+3) Add the following into the `<name>.module.js`:
 ```
 'use strict';
 
 angular.module('<name in camel-case>', ['<dependency>']);
 ```
-4. Add the following into the `<name>.component.js`:
+
+4) Add the following into the `<name>.component.js`:
 ```
 'use strict';
 
@@ -64,11 +67,11 @@ angular.
   });
 ```
 
-5. Inside the `<name>.template.html` file is just the html code for the visualization stored
+5) Inside the `<name>.template.html` file is just the html code for the visualization stored
 
-6. Add the new module into the dependencies of the main application module inside `app.module.js`
+6) Add the new module into the dependencies of the main application module inside `app.module.js`
 
-7. Add a route to new component into the `routeProvider` inside the `app.config.js` file like the following:
+7) Add a route to new component into the `routeProvider` inside the `app.config.js` file like the following:
 ```
   ...
   .when('/<url>', {
@@ -77,7 +80,7 @@ angular.
   ...
 ```
 
-8. Now you have to add the injection of the new created files into the index.html so that the modules can be known from the application.
+8) Now you have to add the injection of the new created files into the index.html so that the modules can be known from the application.
 ```
 ...
 <script src="<name in kebab-case>/<name in kebab-case>.module.js"></script>
@@ -86,3 +89,52 @@ angular.
 ```
 
 ## service
+
+This section explains how to use services and how you can expand the example service. How you add a new module to the application is already explained in the section about a new component.
+The basic structure of a service is the following and kind of obvious.
+```
+'use strict';
+
+angular.
+  module('<module-name>').
+  factory('<service-name>', function (<dependencies e.g. ($http, $q)>) {
+       return {
+           <method-name>: function(<parameters>) {
+               //request logic
+              return <return>
+           }
+       };
+  });
+```
+### post
+```
+...
+<method-name>: function(<parameters>)  {
+    return $http.post('<api-url>', {
+        <request-body as json>
+    });
+}
+...
+```
+
+### get
+```
+...
+<method-name>: function(<parameters>)  {
+    return $http.get('<api-url>');
+}
+...
+```
+
+Other request methods are quiet similar.
+
+### use of a promise
+```
+<service-name>.<method-name>(<parameters>)
+.success(function(<result if request was successfully>){
+    //success handling
+})
+.error(function(<result if request failed>){
+    //error handling
+});
+```
