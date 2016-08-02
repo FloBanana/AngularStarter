@@ -4,6 +4,11 @@ This is a boilerplate for an angularjs application which should implement some s
 
 I used the phone application example directly from angular as an example to build up this.
 
+## start up
+
+To start the application you can simply use the command: `npm start`
+If you are using the scss capabilities of the template you have to compile the scss to css with the command: `npm run build-css` or start the watcher for this purpose with the command: `npm run watch-css`
+
 ## file structure
 
 ```
@@ -42,7 +47,7 @@ The `hello-world` contains the first component of this boilerplate. It consists 
 To create a new component the following steps are necessary:
 1) Create a folder within the app folder with the name of the component written in `kebab-case`
 
-2) Inside this folder create three files and replace the `<name>` with the name of the component written in `kebab-case`: `<name>.module.js`, `<name>.component.js` and `<name>.template.html`
+2) Inside this folder create three files and replace the `<name>` with the name of the component written in `kebab-case`: `<name>.module.js`, `<name>.component.js`,  `<name>.template.html` and `<name>.style.scss`
 
 3) Add the following into the `<name>.module.js`:
 ```
@@ -86,6 +91,11 @@ angular.
 <script src="<name in kebab-case>/<name in kebab-case>.module.js"></script>
 <script src="<name in kebab-case>/<name in kebab-case>.component.js"></script>
 ...
+```
+
+9) As the last step you have to add the style file to the `app/scss/app.core.scss` file as an import.
+```
+@import "../hello-world/hello-world.style";
 ```
 
 ## service
