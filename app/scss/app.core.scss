@@ -1,0 +1,7 @@
+//Imports the vars file where the global style variables are stored in
+@import "./app.vars";
+//Imports the general stylings which should be available and used everywhere
+@import "./app.general";
+
+//Imports the single files of the different sub directories with the stylings for the different views/comoponents
+@import "../hello-world/hello-world.style";
